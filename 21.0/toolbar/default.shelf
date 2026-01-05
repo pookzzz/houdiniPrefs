@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <shelfSet name="shelf_set_3" label="New Shelf Set">
+    <memberToolshelf name="shelf_1"/>
+  </shelfSet>
+
+  <toolshelf name="shelf_1" label="New Shelf"/>
+
+  <toolshelfEdit name="lop_render_test_scenes" fileLocation="/Applications/Houdini/Houdini21.0.440/Frameworks/Houdini.framework/Versions/21.0/Resources/houdini/toolbar/Solaris.shelf"/>
+
+  <toolshelfEdit name="mpm" fileLocation="/Applications/Houdini/Houdini21.0.440/Frameworks/Houdini.framework/Versions/21.0/Resources/houdini/toolbar/ShelfDefinitions.master_shelf"/>
+
+  <toolshelfEdit name="sop_pyro_dynamics" fileLocation="/Applications/Houdini/Houdini21.0.440/Frameworks/Houdini.framework/Versions/21.0/Resources/houdini/toolbar/ShelfDefinitions.master_shelf"/>
+</shelfDocument>

@@ -1,0 +1,8 @@
+{
+    "default_xres": 1024,
+    "default_yres": 1024,
+    "default_pixelscale": 1.0,
+    "default_precision": 32,
+    "default_border": 3,
+    "cache.vramratio": 1
+}

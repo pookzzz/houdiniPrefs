@@ -1,0 +1,16 @@
+{
+    "env": [
+        {
+            "ZHDA": "/Users/bytedance/workspace/houdiniPlugins/wanz/hda"
+        },
+        {
+            "ZOTL": "/Users/bytedance/workspace/houdiniPlugins/wanz/otls"
+        },
+        {
+            "PLUGS": "/Users/bytedance/workspace/houdiniPlugins/"
+        },
+        {
+            "HOUDINI_OTLSCAN_PATH": "@/otls;$ZHDA;$ZHDA/dfx_vecfield_hda_bundle;$ZOTL;$ZOTL/pawel;$PLUGS/Nagamochi/common/otls;$HOUDINI_OTLSCAN_PATH"
+        }
+    ]
+}

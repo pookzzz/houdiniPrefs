@@ -1,0 +1,42 @@
+{
+	"stats":{
+		"start_time":1767519084,
+		"end_time":1767520158,
+		"idle_time":816,
+		"log_id":"0xE802BD2B-0x7624A3E3-0x695A338F-0x000001DB",
+		"persistent_stats":{
+			"colors_scheme":"Houdini Dark"
+		},
+		"flags":[
+		],
+		"counts":{
+			"start_page/window_opened":1,
+			"tools/network/Object|sop_grid":1
+		},
+		"logs":{
+		},
+		"sums_and_counts":{
+		},
+		"strings":{
+		},
+		"checksum":"7e09dfed88c5e80d4360b745524307a1"
+	},
+	"machine_config":{
+		"houdini_major_version":"21",
+		"houdini_minor_version":"0",
+		"houdini_build_version":"440",
+		"application_name":"houdinifx",
+		"license_category":"Commercial",
+		"platform":"macosx14-arm64-clang15.0-targetosx10.15",
+		"operating_system":"macOS Version 26.1 (Build 25B78)",
+		"number_of_processors":12,
+		"system_memory":"36.00 GB",
+		"graphics_card":"",
+		"graphics_card_version":"",
+		"mac_address_hash":"9b241d2d737789d33fc4f7d5a872235e",
+		"user_config_version":20140523,
+		"system_resolution":"1728x1117",
+		"cpu_info":"Apple M3 Pro",
+		"config_hash":"8352fed1f3172499de085b043fbc26b4"
+	}
+}

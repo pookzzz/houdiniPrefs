@@ -1,0 +1,101 @@
+= Labs RizomUV Processor =
+
+#type:     node
+#context:  sop
+#internal: labs::rizomuv_processor
+#icon:     SOP/labs::rizomuv_processor
+
+"""Enables the use of Rizom UV within Houdini."""
+
+[Image:/images/sidefxlabs_banner.jpg]
+
+The RizomUV Processor allows you to control every aspect of Rizom from Houdini via Custom Lua Commands and layer multiple RizomBridge nodes together doing multiple processes. For example, one could do a basic unwrap in the first node, then add another node, and rectangularize specific polygons, or relax UVs, or straighten specific edges, etc.
+By Default, RizomUV tries a simple automatic unwrap. It is important to note, that this automatic process does not always yield acceptable results, and therefore in those cases, edge groups can be passed onto RizomUV to help with the unwrap.
+
+
+Big thanks to Oliver Hotz @ oliver@heimlich.net
+
+
+@parameters
+
+    == Options ==
+
+    Delete Original UVs:
+        #id: clearUVs
+        Removes the present UVs before processing in RizomUV.
+        
+    UDIM Tile Offset (x/y):
+        #id: uv_tiles_offset
+        Specifies the offset of the resulting tile in which you want to place the UV's.
+        
+    Group Type:
+        #id: gtype
+        Enables the use of point/prim/edge groups from Houdini in the Rizom process.
+            
+    Select Group(s):
+        #id: availGroups
+        Select the actual point group that's being used as selection set in Rizom. Multiple groups are supported.
+        
+    UV Attrib to Rizom:
+        #id: outgoingUV
+        If your original object has multiple UV sets (uv, uv1, uv2, etc.) you can specify which one of the sets you want to send to Rizom. For example, if you have the default UV set (UV) but also an alternate named uv2, you can send the second set to Rizom by just specifying: uv2. This only is relevant if the "Delete Original UVs" Toggle is checked.
+        
+    UV Attrib from Rizom:
+        #id: incomingUV
+        By default, the UV set that Rizom returns will go into the Vertex Attribute UV. If you already had a UV set you wanted to keep, you can simply write the Rizom UV set into another attribute.
+        
+    == Advanced ==
+
+    Custom Lua Commands:
+        #id: lua
+        You can enter the commands straight from the Tool log window in RizomUV, to create your own batch of commands. By doing so, you can actually create different "tools" as presets for the HDA, ie. one preset for optimizing UV's, another for packing, another for quadrangulating UVs, etc, keeping everything procedural.
+        
+    Enable Custom Lua:
+        #id: enableLua
+        Enables the custom script. When disabled, a simple autounwrap script will be performed.
+        
+    Auto Load Obj:
+        #id: autoLoad
+        Automatically loads the object into Rizom (preferred, unless you want to handle the loading yourself).
+        
+    Auto Save:
+        #id: autoSave
+        Automatically saves the object from Rizom after the batch commands are executed.
+        
+    Auto Quit:
+        #id: autoQuit
+        Automatically Quit, giving control back to Houdini (preferred, otherwise the Houdini UI is locked) - Disabling this option is great for debugging.
+        
+    Rizom Script Help:
+        #id: rizomSDKHelp
+        
+    Rizom Lab Website:
+        #id: rizomWeb
+        
+    == Settings ==
+
+    Rizom Location:
+        #id: rizomloc
+        The full path to the RizomUV.exe Executable.
+        
+    Temp Obj Location:
+        #id: templocation
+        The temporary object file that's created.  For ease of use, leave in the preferred location.
+        
+
+@presets
+
+== Creating presets ==
+
+We strongly encourage you to create presets for often used processes in Rizom.  Simply use the advanced tab and create a custom lua script, saving it as a preset, so that it can be easily recalled at any time.
+Typical things would for example be Rectangularize, Pack with Scale, Pack without Scale, Optimize, and so on.
+
+The Presets can be accessed by pressing the cogwheel on the top right of the node and will be found on the bottom of that list.
+
+
+@locals
+    
+    
+@related
+- [item | /link ]
+

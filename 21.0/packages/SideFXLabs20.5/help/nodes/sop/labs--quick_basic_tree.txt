@@ -1,0 +1,11 @@
+= Labs Quick Basic Tree =
+
+#type: node
+#context: sop
+#internal: labs::quick_basic_tree
+#icon: quick_basic_tree
+#tags: sidefxlabs,  model
+
+"""Creates a quick basic tree"""
+
+This node creates a quick basic tree.

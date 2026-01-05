@@ -1,0 +1,86 @@
+#type:     node
+#context:  sop
+#internal: labs::rop_zibravdb_compress::1.0
+#icon:     /labs_icons/zibravdb.svg
+#since:    20.5
+
+= Labs ZibraVDB Compress =
+
+"""Compresses a VDB sequence and caches it to disk as a single  `.zibravdb` file."""
+
+
+As a part of the [ZibraVDB for Houdini |https://www.zibra.ai] plugin, this node caches a VDB sequence to disk as a single, highly compressed `.zibravdb` file. It can compress both animated VDB sequences and static VDB geometries.
+
+The compression often achieves up to 97–99% reduction in VDB file size with minimal quality loss. The compression rate is adjustable for each VDB field, providing independent control over the quality and memory footprint of `density`, `temperature`, `flame`, and other standard or custom fields. Up to 8 float fields can be compressed simultaneously.
+
+TIP:
+    You may also compress SDF VDBs indirectly. Convert SDF VDBs to Fog VDBs before compression and back to SDF VDBs after decompression using the [Convert VDB SOP|Node:/sop/convertvdb].
+
+TIP:
+    You can force the compression and decompression to run on CPU instead of GPU via an environment variable: 
+    `ZIBRAVDB_FOR_HOUDINI_FORCE_SOFTWARE_DEVICE = 1`
+
+    On Windows, you can force the choice of graphics API via an environment variable:
+    * `ZIBRAVDB_FOR_HOUDINI_FORCE_GRAPHICS_API = D3D12`
+    * `ZIBRAVDB_FOR_HOUDINI_FORCE_GRAPHICS_API = VULKAN`
+
+
+:include /nodes/out/labs--zibravdb_compress-1.0#gettingready:
+
+
+:include /nodes/out/labs--zibravdb_compress-1.0#aboutzibravdb:
+
+
+:include /nodes/out/labs--zibravdb_compress-1.0#feedback:
+
+
+@parameters
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#execute:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#executebackground:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#renderdialog:
+    
+    :include /nodes/out/labs--zibravdb_compress-1.0#trange:
+    
+    :include /nodes/out/labs--zibravdb_compress-1.0#f:
+    
+    :include /nodes/out/labs--zibravdb_compress-1.0#take:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#filename:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#quality:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#useperchsettings:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#perch_settings:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#perchname#:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#perchquality#:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#prerender:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#preframe:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#postframe:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#postrender:
+
+    :include /nodes/out/labs--zibravdb_compress-1.0#openmanagement:
+
+   
+@examples
+
+    TIP:
+        When viewing in Houdini's Help Browser, please copy the example file's URL to a regular browser to proceed with the download.
+
+    - [Example File|https://github.com/sideeffects/SideFXLabsExamples/blob/main/examples/zibravdb/zibravdb.1.0.hip]
+
+
+@related
+
+    - [Node:out/labs--zibravdb_compress-1.0]
+    - [Node:sop/labs--zibravdb_decompress-1.0]
+    - [Node:sop/labs--zibravdb_filecache-1.0]

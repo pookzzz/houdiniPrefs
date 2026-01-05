@@ -1,0 +1,331 @@
+#type:     node
+#context:  sop
+#internal: labs::maps_baker::4.0
+#icon:     SOP/labs::maps_baker::4.0
+
+= Labs Maps Baker =
+
+"""Summary."""
+
+[Image:/images/sidefxlabs_banner.jpg]
+
+:video:
+    #src:/movies/cablegenerator.mp4
+
+<Description goes here>
+
+
+@parameters
+
+    Render:
+        #id: execute
+        
+    Manual Mode:
+        #id: bManualMode
+        
+    == Bake Settings ==
+
+    Output Directory:
+        #id: sOutputFile
+        
+    Resolution:
+        #id: i2Resolution
+        
+    Label:
+        #id: parm
+        
+        256 x 256:
+            
+        512 x 512:
+            
+        1024 x 1024:
+            
+        2048 x 2048:
+            
+        4096 x 4096:
+            
+        8192 x 8192:
+            
+    Tracing Mode:
+        #id: mBakeMode
+        
+        Nearest Surface:
+            
+        Surface Normal:
+            
+        Cage Input:
+            
+        Copy Lowpoly:
+            
+    Max Trace Distance:
+        #id: fMaxTraceDist
+        
+    Visualize:
+        #id: visualize
+        
+    Preview Channel:
+        #id: preview_channel
+        
+    === Frames ===
+
+    Frames:
+        #id: framemode
+        
+        Current Frame:
+            
+        Frame Range:
+            
+    Range:
+        #id: framerange
+        
+    == Bake Options ==
+
+    === Transfer ===
+
+    Diffuse Map:
+        #id: bDiffuse
+        
+    Diffuse Map:
+        #id: sDiffuse
+        
+    Gamma:
+        #id: fDiffuseGamma
+        
+    Normal Map:
+        #id: bNormal
+        
+    Normal Map:
+        #id: sNormal
+        
+    Gamma:
+        #id: fNormalGamma
+        
+    Opacity Map:
+        #id: bOpacity
+        
+    Opacity Map:
+        #id: sOpacity
+        
+    Roughness Map:
+        #id: bRoughness
+        
+    Roughness Map:
+        #id: sRoughness
+        
+    Gamma:
+        #id: fRoughnessGamma
+        
+    Metallic Map:
+        #id: bMetallic
+        
+    Metallic Map:
+        #id: sMetallic
+        
+    Gamma:
+        #id: fMetallicGamma
+        
+    === Generate ===
+
+    Vertex Color Map:
+        #id: bVertexCd
+        
+    Vertex Color:
+        #id: sVertexColor
+        
+    Gamma:
+        #id: fVertexColorGamma
+        
+    AO Map:
+        #id: bAO
+        
+    AO:
+        #id: sAO
+        
+    Gamma:
+        #id: fAOGamma
+        
+    Thickness Map:
+        #id: bThickness
+        
+    Thickness:
+        #id: sThickness
+        
+    Gamma:
+        #id: fThicknessGamma
+        
+    Curvature Map:
+        #id: bCurvature
+        
+    Curvature:
+        #id: sCurvature
+        
+    World Normal Map:
+        #id: bWorldNormal
+        
+    World Normal:
+        #id: sWorldNormal
+        
+    Height Map:
+        #id: bHeight
+        
+    Height:
+        #id: sHeight
+        
+    Format:
+        #id: sHeightFormat
+        
+        Default:
+            
+        EXR:
+            
+    Range:
+        #id: maxheightdistance
+        
+    Alpha Map:
+        #id: bAlpha
+        
+    Alpha:
+        #id: sAlpha
+        
+    UV Fill:
+        #id: uvfill
+        
+    Position Map:
+        #id: bPos
+        
+    Position:
+        #id: sPos
+        
+    Material ID:
+        #id: usematerialid
+        
+    Material ID:
+        #id: materialid
+        
+    Export Low:
+        #id: exportlow
+        
+    Low Export:
+        #id: sopoutputlow
+        
+    Export High:
+        #id: exporthigh
+        
+    High Export:
+        #id: sopoutputhigh
+        
+    == Attributes ==
+
+    === Custom Attributes ===
+
+    Attribute:
+        #id: sCustomAttribute#
+        
+    == Advanced ==
+
+    === Padding ===
+
+    Blend Method:
+        #id: blendmethod
+        
+        Fill Average:
+            
+        Flood Fill:
+            
+        Diffuse Fill:
+            
+    Edge Padding:
+        #id: edgepadding
+        
+    === Sampling ===
+
+    Bake Per Piece Using Name:
+        #id: bakename
+        
+    Opacity Maps Affect Tracing:
+        #id: opacitytracing
+        
+    Samples:
+        #id: samplesscalar
+        
+    Filter:
+        #id: downfilter
+        
+    === Normal Map ===
+
+    Tangent Normal Flip X:
+        #id: bFlipTangentX
+        
+    Tangent Normal Flip Y:
+        #id: bFlipTangentY
+        
+    === Rounded Edge Normals ===
+
+    Samples:
+        #id: roundededgesamples
+        
+    Cusp Angle:
+        #id: roundededgecuspangle
+        
+    === AO Map ===
+
+    Number of Rays:
+        #id: numrays
+        
+    Maximum Ray Distance:
+        #id: maxdist
+        
+    Bias:
+        #id: bias
+        
+    Cone Width:
+        #id: conewidth
+        
+    === Thickness Map ===
+
+    Normalized Output Map:
+        #id: normalizedthickness
+        
+    Number of Rays:
+        #id: numrays2
+        
+    Minimum Ray Distance:
+        #id: minthicknessdist
+        
+    Maximum Ray Distance:
+        #id: maxthicknessdist
+        
+    Cone Width:
+        #id: conewidth2
+        
+    === Curvature Map ===
+
+    Number of Rays:
+        #id: iNumRaysCurvature
+        
+    Maximum Ray Distance:
+        #id: fMaxRayDistCurvature
+        
+    Bias:
+        #id: fCurvatureBias
+        
+    Cone Width:
+        #id: fConeWidthCurvature
+        
+    Scale:
+        #id: fCurvaturescale
+        
+    Flatness Filter:
+        #id: fFlatbias
+        
+    === Material ID ===
+
+    Material ID Seed:
+        #id: materialidseed
+        
+@locals
+    
+    
+@related
+- [item | /link ]
+

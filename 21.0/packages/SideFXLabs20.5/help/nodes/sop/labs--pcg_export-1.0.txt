@@ -1,0 +1,130 @@
+#type:     node
+#context:  sop
+#internal: Labs::pcg_export::1.0
+#icon:     SOP/Labs::pcg_export::1.0
+#since:    20.0
+
+= Labs PCG Export (Beta) =
+
+"""Takes a point cloud with attributes and exports them as 2 CSV files to be used with Unreal Engine PCG system."""
+
+This node exports 2 CSV files that are plugged into the _Houdini Import DataTable Blueprint_ inside a PCG graph in Unreal Engine 5.2 and up. It can export attributes such as Positions, Rotation, Scale, Mesh, Material and Custom ones. These attributes are then read inside the Unreal Blueprint to reproduce the [Copy to Points|Node:/sop/copytopoints] node functionality with a piece attribute that decides what mesh should be copied to what point.
+
+WARNING:
+    Make sure to have the Procedural Content Generation Framework (PCG) Plugin enabled.
+
+    Make sure to have the Procedural Content Generation Framework External Data Interop Plugin enabled in order to use the Alembic node (Only available in UE5.4+).
+
+    The Unreal Engine _Houdini Import DataTable Blueprint_ needs to be fixed once it is downloaded as part of the _SideFX Labs Unreal Plugin_.
+    
+    When opening the _Houdini Import DataTable Blueprint_ for the first time, Unreal may not be able to find the node called _Break CSV Point Format_. (This is likely a known issue on the Unreal side.) All you have to do in that case is to recreate it and rewire it to the other nodes. 
+    
+    In case the _Break CSV Point Format_ node does not exist in the search, you can copy and paste the content from the text file "Break CSV Point Format node as text.txt" into the _Houdini Import DataTable Blueprint_ to recreate the node.
+
+
+@parameters
+
+    Export PCG Data:
+        #id: export
+	Exports 2 CSV files with relevant data for Unreal Engine PCG.
+        
+    == Export Paths ==
+
+    Enable Mesh Export:
+        #id: enablemesh
+	Enables the Mesh Data Table Export.
+        
+    Mesh:
+        #id: file_mesh
+	The file path for the mesh info CSV file.
+        
+    Enable Material Export:
+        #id: enablemat
+	Enables the Material Override Data Table Export.
+        
+    Material:
+        #id: file_mat
+	The file path for the material info CSV file.
+        
+    == Input Attribute Names ==
+
+    Mesh ID:
+        #id: mesh
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to spawn meshes.
+        
+    Set Rotation By:
+        #id: rotmode
+	Set the rotation either from the orientation, or the normal and up attributes.
+        
+        __Orient Attribute__:
+            
+        __Normal and Up Attributes__:
+            
+    Orient:
+        #id: orient
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to rotate meshes.
+        
+    Normal:
+        #id: n
+	The name for the normal attribute which will be converted to orient in Unreal Engine.
+        
+    Up:
+        #id: up
+	The attribute name for the up attribute which will be converted to orient in Unreal Engine..
+        
+    Scale:
+        #id: scale
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to scale meshes.
+        
+    Uniform Scale:
+        #id: pscale
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to scale meshes uniformly, however, pscale will be multiplied by scale, and only scale will be exported.
+        
+    === Materials ===
+
+    Material 0 ID:
+        #id: material
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 0.
+        
+    Material 1 ID:
+        #id: material_1
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 1.
+        
+    Material 2 ID:
+        #id: material_2
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 2.
+        
+    Material 3 ID:
+        #id: material_3
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 3.
+        
+    Material 4 ID:
+        #id: material_4
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 4.
+        
+    Material 5 ID:
+        #id: material_5
+	The attribute name which will be used in Unreal PCG (Static Mesh Spawner) to override material slot 5.
+        
+    === Custom Floats ===
+
+    Custom:
+        #id: custom
+	The attribute name which will be used in Unreal PCG for custom purposes.
+        
+    Custom 1:
+        #id: custom_1
+	The attribute name which will be used in Unreal PCG for custom purposes.
+        
+    Custom 2:
+        #id: custom_2
+	The attribute name which will be used in Unreal PCG for custom purposes.
+        
+    Custom 3:
+        #id: custom_3
+	The attribute name which will be used in Unreal PCG for custom purposes.
+        
+    Unreal Engine Content Plugin and Guides:
+        #id: openunrealshaderpath
+	The Unreal Blueprint files required to import the CSV files into PCG.
+

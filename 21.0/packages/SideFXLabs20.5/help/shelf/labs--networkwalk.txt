@@ -1,0 +1,22 @@
+= Labs Network Walk =
+
+#internal: labs::networkwalk
+#icon: networkwalk
+#tags: sidefxlabs, util
+
+""" This utility tool is a set of four actions via hotkeys that allow you to step or walk around the node network.  """
+
+== Overview ==
+Network Walk is a set of four actions via hotkeys that allow you to walk around the node network.
+
+These actions are mapped to the corresponding hotkeys: 
+PageUp = Move Up
+PageDown = Move Down
+Insert = Move Left
+Home = Move Right
+
+Coupled with the default U and I keys, these keys can let you traverse networks quickly and intuitively.
+
+Network Walk displays brief feedback messages in Network View to indicate the current location and direction of the traversal.
+
+The Network Walk shelf tool assigns or removes its hotkey keys and actions. Restart Houdini for the changes to take effect.

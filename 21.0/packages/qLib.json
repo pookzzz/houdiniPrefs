@@ -1,0 +1,14 @@
+{
+    "env": [
+        {
+            "QLIB": "/Users/bytedance/workspace/houdiniPlugins/qLib"
+        },
+        {
+            "QOTL": "$QLIB/otls"
+        },
+        {
+            "HOUDINI_OTLSCAN_PATH": "$QOTL/base;$QOTL/future;$QOTL/experimental;$HOUDINI_OTLSCAN_PATH"
+        }
+    ],
+    "path": "$QLIB"
+}
