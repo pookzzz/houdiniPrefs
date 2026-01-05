@@ -1,1 +1,0 @@
-{"type": "root", "attrs": {"type": "include"}, "body": [{"level": 2, "id": "comp_sim", "container": true, "type": "h", "indent": 0, "text": ["Compiled simulation"], "extent": [16, 53], "body": [{"type": "para", "indent": 0, "text": ["Compiled COP networks don\u2019t support simulation."], "extent": [53, 102]}]}]}
